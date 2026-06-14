@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🚀 Task Manager Pro</h1>
+
+        <div class="header-actions">
+            <button id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button id="voiceBtn">
+                🎤 Voice
+            </button>
+        </div>
+    </header>
+
+    <div class="stats">
+
+        <div class="card">
+            <h3>Total</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Progress</h3>
+            <p id="progressPercent">0%</p>
+        </div>
+
+    </div>
+
+    <section class="task-form">
+
+        <input
+        type="text"
+        id="taskTitle"
+        placeholder="Enter Task">
+
+        <select id="category">
+            <option value="Study">Study</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+        </select>
+
+        <select id="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <input type="date" id="dueDate">
+
+        <button id="addTaskBtn">
+            Add Task
+        </button>
+
+    </section>
+
+    <section class="tools">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Task">
+
+        <select id="filterStatus">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+
+        <button id="exportPDF">
+            PDF
+        </button>
+
+        <button id="exportExcel">
+            Excel
+        </button>
+
+    </section>
+
+    <div class="board">
+
+        <div class="column">
+
+            <h2>📋 Pending</h2>
+
+            <div
+            id="pendingColumn"
+            class="task-column">
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <h2>✅ Completed</h2>
+
+            <div
+            id="completedColumn"
+            class="task-column">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="analytics">
+
+        <h2>📈 Analytics</h2>
+
+        <canvas id="taskChart"></canvas>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
